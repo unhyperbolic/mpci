@@ -1,0 +1,36 @@
+#
+
+# Just trying the point 3+4i
+53 0x3p+0 0x3p+0 0x4p+0 0x4p+0     53 0x1.9c041f7ed8d33p+0 0x1.9c041f7ed8d34p+0 0xe.d63382b0dda78p-4 0xe.d63382b0dda8p-4
+
+# Branch cut near -1, imaginary part just above
+53 -0x1p+0 -0x1p+0 0x1.ad7f29abcaf48p-24 0x1.ad7f29abcaf48p-24        53 0x1.67fffffffffep-48 0x1.6ffffffffffdfp-48 0x3.243f68db06794p+0 0x3.243f68db06796p+0
+# Branch cut near -1, imaginary part crosses real line
+53 -0x1p+0 -0x1p+0 -0x1.ad7f29abcaf48p-24 0x1.ad7f29abcaf48p-24        53 0x0p+0 0x1.6ffffffffffdfp-48 0x3.243f68db06794p+0 0x3.243f6c3604ccep+0
+# Branch cut near -1, imaginary part has interval [0, epsilon]
+53 -0x1p+0 -0x1p+0 0x0p+0 0x1.ad7f29abcaf48p-24        53 0x0p+0 0x1.6ffffffffffdfp-48 0x3.243f68db06794p+0 0x3.243f6a8885a32p+0
+# Branch cut near -1, imaginary part has interval [-epsilon, 0]
+53 -0x1p+0 -0x1p+0 -0x1.ad7f29abcaf48p-24 -0x0p+0       53 0x0p+0 0x1.6ffffffffffdfp-48 0x3.243f6a8885a3p+0 0x3.243f6c3604ccep+0
+# Branch cut near -1, imaginary part has interval [-2epsilon, -epsilon]
+53 -0x1p+0 -0x1p+0 -0x1.ad7f29abcaf48p-23 -0x1.ad7f29abcaf48p-24       53 0x1.67fffffffffep-48 0x5.a7ffffffffe04p-48 -0x3.243f68db06796p+0 -0x3.243f672d874fap+0
+
+# Contains origin
+63 -0x1.9999999999999998p-4 0x1.9999999999999998p-4 -0x1.9999999999999998p-4 0x1.9999999999999998p-4     63 nan nan nan nan
+
+# Horizontal line above x-axis
+63 0 inf 0x1.9999999999999998p-4 0x1.9999999999999998p-4     63 -0x2.4d763776aaa2b06p+0 inf 0x0p+0 0x1.921fb54442d1846cp+0
+
+# Horizontal line above x-axis
+63 -inf inf 0x1.9999999999999998p-4 0x1.9999999999999998p-4     63 -0x2.4d763776aaa2b06p+0 inf 0x0p+0 0x3.243f6a8885a308d8p+0
+
+# Vertical line
+63 0x1.0p+2 0x1.1p+2 -inf inf   63  0x1.62e42fefa39ef354p+0 inf -0x1.921fb54442d1846cp+0 0x1.921fb54442d1846cp+0
+
+# Just another random points
+100 -0x6.2p+0 -0x6.1p+0 -0x8.3p+0 -0x8.134aa4eep+0          100  0x2.4ff3f667166f4f88370b503a4p+0 0x2.53287b45c03c77b7cdc86dc28p+0 -0x2.383e712fcdb3c2154a7bdf094p+0 -0x2.354a23f36d250c8ccec65c2b8p+0
+
+# Test that nan gives nan
+53 nan 0x1p+0 0x1p+0 0x1p+0        53 nan nan nan nan
+53 0x1p+0 nan 0x1p+0 0x1p+0        53 nan nan nan nan
+53 0x1p+0 0x1p+0 nan 0x1p+0        53 nan nan nan nan
+53 0x1p+0 0x1p+0 0x1p+0 nan        53 nan nan nan nan

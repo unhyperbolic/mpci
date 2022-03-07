@@ -1,0 +1,20 @@
+- based on mpfr, mpfi and similar API, so read those first
+- ext_mpfi: functions that might migrate down to mpfi, bounding not optimal
+- not smallest interval possible: example from div test. In particular, inclusion might not hold.
+- div yields NAN
+- sqrt/log/dilog computes a lift using the standard branch cut, the choice of lift is deterministic on the interval but breaks some properties that the interval implementation for real intervals in mpfi has: inclusion doesn't carry forward.
+  More useful in the context of complex analysis where the result is either only defined up to sign or multiplies of 2pi or the final result should not depend on the choice of lift taken at the intermediate results. What is bad: log(a * (b / c)), log((a * b) / c)
+  Same element in the Extended Bloch group, better example than that?
+
+w = log(z)
+exp(w/2) * exp(w/2)
+
+z = a * b / c
+
+w0 = log( (a*b) / c)
+w1 = log( a * (b / c))
+
+exp(w0/2) * exp(w1/2)
+
+- sqrt and (similarly polylog) of a complex interval I containing zero, respectively, one return nan interval (and sets mpfr exceptions) even though there is a complex interval containing all possible values z such that z^2 in I.
+

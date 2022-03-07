@@ -1,0 +1,7 @@
+A complex interval library similar in flavor to mpfr and mpfi.
+
+This is work in progress, lots of parts have not been finished yet, are just
+drafts and have bugs, need clean-up, and have not been tested yet.
+
+One goal is to implement a complex interval polylogarithm so that we can
+compute verified volume of ideal tetrahedra using the Block-Wigner dilogarithm.
